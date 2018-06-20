@@ -26,7 +26,7 @@ header {
 
 .moves {
   margin: 10px auto;
-  width: 498px;
+  width: 328px;
 }
 
 .move {
@@ -41,29 +41,30 @@ header {
   background-image: url('images/rps.png');
   background-repeat: no-repeat;
   -webkit-background-size: 300%;
-  background-size: 300%;
-  width: 150px;
-  height: 168px;
+  background-size: 330%;
+  width: 103px;
+  height: 158px;
+  background-position-x: -3%;
 }
 
 #paper {
   background-image: url('images/rps.png');
-  background-position: 52% 0px;
+  background-position: 49% 0px;
   background-repeat: no-repeat;
   -webkit-background-size: 300%;
-  background-size: 300%;
-  width: 150px;
-  height: 168px;
+  background-size: 325%;
+  width: 104px;
+  height: 158px;
 }
 
 #scissors {
   background-image: url('images/rps.png');
-  background-position: 104% 0px;
+  background-position: 101% 0px;
   background-repeat: no-repeat;
   -webkit-background-size: 300%;
-  background-size: 300%;
-  width: 150px;
-  height: 168px;
+  background-size: 330%;
+  width: 102px;
+  height: 158px;
 }
 
 .points {
