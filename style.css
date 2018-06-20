@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css?family=Gaegu:400,700');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Gaegu, cursive;
+  margin-top: 2%;
+  padding: 10px 0;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 5%;
+  padding-bottom: 5%;
+  border-bottom: 2px dashed black;
+}
+
+.intro > h2 {
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+.moves {
+  margin: 10px auto;
+  width: 498px;
+}
+
+.move {
+  display: inline-block;
+}
+
+.move:hover {
+  cursor: pointer;
+}
+
+#rock {
+  background-image: url('images/rps.png');
+  background-repeat: no-repeat;
+  -webkit-background-size: 300%;
+  background-size: 300%;
+  width: 150px;
+  height: 168px;
+}
+
+#paper {
+  background-image: url('images/rps.png');
+  background-position: 52% 0px;
+  background-repeat: no-repeat;
+  -webkit-background-size: 300%;
+  background-size: 300%;
+  width: 150px;
+  height: 168px;
+}
+
+#scissors {
+  background-image: url('images/rps.png');
+  background-position: 104% 0px;
+  background-repeat: no-repeat;
+  -webkit-background-size: 300%;
+  background-size: 300%;
+  width: 150px;
+  height: 168px;
+}
+
+.points {
+  text-align: center;
+  border: 1px dashed black;
+  width: 250px;
+  padding: 30px;
+  margin: 10% auto;
+  border-radius: 4px;
+}
+
+#replay {
+  text-align: center;
+}
+
+#replay a {
+  text-decoration: none;
+  color: dodgerblue;
+}
+
+footer {
+  text-align: center;
+    opacity: 0.3;
+}
+
+footer a {
+  text-decoration: none;
+  color: grey;
+}

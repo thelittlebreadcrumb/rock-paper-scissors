@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Rock Paper Scissors</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Rock - Paper - Scissors</h1>
+    <h4>Traditional rock paper scissors game. <br> First to 5 wins!</h4>
+  </header>
+
+  <div class="intro">
+    <h2>Choose one of the below to start.</h2>
+    <span id="replay"><a href="index.html" onclick="reload()">replay?</a></span>
+  </div>
+
+  <div class="moves">
+    <div class="move" id="rock"></div>
+    <div class="move" id="paper"></div>
+    <div class="move" id="scissors"></div>
+  </div>
+
+  <div class="points">
+    <h2>score</h2>
+    You: <span id="you">0</span> | Computer: <span id="computer">0</span>
+    <br>
+    <span id="gameover"></span>
+  </div>
+
+  <footer>
+    <p>Made by: <a href="https://github.com/thelittlebreadcrumb/BLDG1"> thelittlebreadcrumb</a></p>
+  </footer>
+
+  <script src="app.js" charset="utf-8"></script>
+</body>
+</html>
