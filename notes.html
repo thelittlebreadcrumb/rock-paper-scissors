@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <style media="screen">
+    @import url('https://fonts.googleapis.com/css?family=Gaegu:400,700');
+    * {font-family: Gaegu, cursive; margin: 0; padding: 0;}
+    h1 { text-align: center; padding-top: 10%;}
+    .green{color: darkolivegreen;}
+    .red{color: red;}
+    .yellow{color: gold;}
+  </style>
+
+  <title>thelittlebreadcrumb</title>
+</head>
+<body>
+  <wrapper>
+    <h1 id="bye">
+      <span class="red">Open</span>
+      <span class="yellow">your</span>
+      <span class="green">console!</span>
+    </h1>
+  </wrapper>
+  <script type="text/javascript">
+
+    main();
+
+    function main() {
+      let computerscore = 0;
+      let playerscore = 0;
+      let quit = false;
+      let playername = prompt("Whats your name?", "Player");
+        if (playername === null) {
+          alert("type stop in the next prompt to exit game");
+        }
+        console.log("\n Welcome to Rock Paper Scissors \n Made by Bhavya Daiya \n  ");
+        console.log("\nRegistered player as " + playername + ". Let's go! \nFirst to 5 wins the game. \n" + playername + ", start round by typing eg newround(\"\") \n ");
+
+        newround();
+
+        function getcomputerchoice() {
+            let computerchoices = Math.floor(Math.random()*3);
+            if (computerchoices == 0) {
+                return "Rock";
+                playerchoice(pick, 'rock');
+              } else if (computerchoices == 1) {
+                 return "Paper";
+                 return playerchoice(pick, 'paper');
+              } else {
+                return "Scissors";
+                return playerchoice(pick, 'scissors')
+              }
+          }
+
+        function newround() {
+          scoreboard(computerscore, playerscore);
+          if (quit === true) {
+            exit();
+            return;
+          }
+
+          pick = prompt("Choose from rock, paper or scissors");
+            if (pick === null) {
+              quit = confirm("Would you like to quit?");
+              if (quit == true) {
+                exit();
+                return
+            } else {
+              newround();
+            }
+        } else {
+            response = pick.substring(0,1).toUpperCase() + pick.substring(1).toLowerCase();
+            if (!(response == "Rock" || response == "Paper" || response == "Scissors" || response == "Stop")) {
+              alert("Please only enter \"Rock\", \"Paper\" or \"Scissors\". \n...Or you may need check your spelling. You entered: " + response);
+              newround();
+            } else {
+              const computerchoices = getcomputerchoice();
+              // console.log("You chose " + response + ". And computer chose " + computerchoices);
+              playerchoice(response, computerchoices);
+            }
+          }
+        }
+
+        function playerchoice(response, computerchoices) {
+
+          if (response == "Rock" && computerchoices == "Rock") {
+            console.log("You chose " + response + ". Computer chose: " + computerchoices + ". It's a draw - nobody earns any points");
+            newround();
+          } else if (response == "Rock" && computerchoices == "Paper") {
+            console.log("You chose " + response + ". Computer chose: " + computerchoices + ". You lose.");
+            computerscore++;
+            console.log("Scores: \n" + playername + ": " + playerscore + "\nComputer: " + computerscore + "\n");
+            newround();
+          } else if (response == "Rock" && computerchoices == "Scissors") {
+            console.log("You chose " + response + ". Computer chose: " + computerchoices + ". You won!"); ////////
+            playerscore++;
+            console.log("Scores: \n" + playername + ": " + playerscore + "\nComputer: " + computerscore + "\n");
+            newround();
+          } else if (response == "Paper" && computerchoices == "Paper") {
+            console.log("You chose " + response + ". Computer chose: " + computerchoices + ". It's a draw - nobody earns any points");
+            newround();
+          } else if (response == "Paper" && computerchoices == "Rock") {
+            console.log("You chose " + response + ". Computer chose: " + computerchoices + ". You win!");
+            playerscore++;
+            console.log("Scores: \n" + playername + ": " + playerscore + "\nComputer: " + computerscore + "\n");
+            newround();
+          } else if (response == "Paper" && computerchoices == "Scissors") {
+            console.log("You chose " + response + ". Computer chose: " + computerchoices + ". You lose!");
+            computerscore++;
+            console.log("Scores: \n" + playername + ": " + playerscore + "\nComputer: " + computerscore + "\n");
+            newround();
+          } else if (response == "Scissors" && computerchoices == "Scissors") {
+            console.log("You chose " + response + ". Computer chose: " + computerchoices + ". It's a draw - nobody earns any points");
+            newround();
+          } else if (response == "Scissors" && computerchoices == "Rock") {
+            console.log("You chose " + response + ". Computer chose: " + computerchoices + ". You lose!");
+            computerscore++;
+            console.log("Scores: \n" + playername + ": " + playerscore + "\nComputer: " + computerscore + "\n");
+            newround();
+          } else if (response == "Scissors" && computerchoices == "Paper") {
+            console.log("You chose " + response + ". Computer chose: " + computerchoices + ". You won!");
+            playerscore++;
+            console.log("Scores: \n" + playername + ": " + playerscore + "\nComputer: " + computerscore + "\n");
+            newround();
+          } else if (response == "Stop") {
+            alert("Thank you, come again!");
+            console.log(playername + " has left the game.")
+            return;
+          } else {
+            alert("Thank you, come again!");
+            console.log(playername + " has left the game.")
+            exit();
+          }
+
+        }
+
+        function scoreboard(computer, player) {
+          if (player == 5 || computer == 5) {
+            if (player > computer) {
+              alert(playername + ", you won!")
+            } else {
+              alert("Computer won")
+            }
+            let playagain = confirm('Do you want to play again?')
+            console.log(playagain);
+            if (playagain === true) {
+              playerscore = 0;
+              computerscore = 0;
+            } else {
+              console.log(playername + " has left the game.")
+              quit = true;
+            }
+          }
+        }
+
+        function exit() {
+          console.log("Thanks for playing, " + playername + "!");
+          document.querySelector('h1').innerHTML = "Thanks for playing, " + playername + "!";
+        }
+
+    } //main closing tag. tab indent 5
+
+
+  </script>
+</body>
+</html>

@@ -39,7 +39,7 @@ Table of Contents for the code:
    these are derived from game(playerchoice) where playerchoices comes from the button that was clicked.
    and computerchoice comes from the function of randomly generated options.
 
-   e.g.  wins(playerchoice = 'r', computerchioce = 'p');
+   e.g.  wins(playerchoice = 'r', computerchoice = 'p');
 
 6) Once game recieves the parameter 'r', it goes ahead and starts going through a set of switch cases.
    the switch looks for the playerchoice and computerchoice as a joint argument.
@@ -73,7 +73,7 @@ After writing this long winded explanation of what goes on, I have noticed that 
 part of Web Development 101 \ Fundamentals Part 4. So to all those that used arrays and for statements (incl me),
 good try but we've all google'd the living shit out of this excercise. A big thank you to Tenzin Phuljung of whatsdev
 on YouTube. His entire Part 2 video is essentially explained here. Only addtional thing that I have added is the gameover
-function. 
+function.
 
 My new goal is to retry this using the basic knowledge that we would have learnt up to this point.
 */
